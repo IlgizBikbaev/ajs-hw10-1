@@ -5,11 +5,7 @@ import { GameSaving } from './gamesaving.js'
 export default class GameSavingLoader {
     static load() {
         return read().then((data) => json(data))
-        .then((data) => new GameSaving(JSON.parse(data)))
-
-        .catch((error) => {
-            throw new Error(error);
-            });
+        .then((data) => new GameSaving(JSON.parse(data)));
     }
 }
 
